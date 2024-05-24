@@ -2,14 +2,14 @@
     background-color: #4CAF50; /* لون الخلفية */
     border: none; /* إزالة الإطار */
     color: white; /* لون النص */
-    padding: 12px 32px; /* الحشوة الداخلية */
+    padding: 10px 17px; /* الحشوة الداخلية */
     text-align: center; /* محاذاة النص إلى الوسط */
     text-decoration: none; /* إزالة التسطير */
     display: inline-block; /* عرض الزر كعنصر مضمّن */
-    font-size: 13px; /* حجم الخط */
-    margin: 4px 2px; /* الهامش */
+    font-size: 17px; /* حجم الخط */
+    margin: 2px 3px; /* الهامش */
     cursor: pointer; /* تغيير مؤشر الفأرة عند التحويم */
-    border-radius: 12px; /* جعل الزوايا مستديرة */
+    border-radius: 9px; /* جعل الزوايا مستديرة */
 	float: right; /* تحريك الزر إلى اليمين */
 }
 
