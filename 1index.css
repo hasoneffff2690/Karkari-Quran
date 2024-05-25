@@ -155,8 +155,4 @@ img {
   height: auto;
      max-width: 100%;
     }
-        .custom-audio {
-            width: 100%; /* يملأ العرض المتاح */
-            max-width: 500px; /* الحد الأقصى للعرض */
-            height: 50px; /* الارتفاع المخصص */
-        }
+        
