@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html itemscope itemtype=https://schema.org/WebSite lang=ar class=no-js>
+<head>
+   
+    </head>
+    <body>
+<meta name=viewport content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name=author content=quran>
+<meta name=viewport content="width=device-width, initial-scale=1.0">
+<meta name=theme-color content=#218756>
+<meta charset=UTF-8>
+<link rel=stylesheet href="0index.css">
+<link rel=stylesheet href="1index.css">
+<link href="https://fonts.googleapis.com/css?family=Changa" rel=stylesheet
