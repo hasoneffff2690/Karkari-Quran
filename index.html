@@ -186,12 +186,14 @@
 <h4>الحقوق محفوظة لكل مسلم &copy;2024 -  موقع الكَركَري للقران الكريم</h4> <a href="https://www.facebook.com/Hassan.Qasrij" target="_blank">الفيسبوك</a> | by Hassan Al-Jarjari</p>
 </center>
 
+<!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تشغيل صوت تلقائي</title>
     <style>
+        /* إخفاء أيقونة التشغيل */
         audio {
             display: none;
         }
@@ -208,27 +210,16 @@
     </audio>
 
     <script>
-        // التحقق مما إذا كان المستخدم قد تفاعل مع الصفحة
-        let hasInteracted = false;
-
-        // دالة لتشغيل الصوت
-        function playAudio() {
-            if (!hasInteracted) {
-                const audio = document.getElementById('backgroundAudio');
-                audio.play().catch(error => {
-                    console.log("لم يتم تشغيل الصوت بسبب قيود المتصفح.");
-                });
-                hasInteracted = true; // لضمان تشغيل الصوت مرة واحدة فقط
-            }
-        }
-
-        // تشغيل الصوت عند تفاعل المستخدم مع الصفحة
-        window.addEventListener('click', playAudio);
-        window.addEventListener('scroll', playAudio);
-        window.addEventListener('keydown', playAudio);
+        // دالة لتشغيل الصوت عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', function () {
+            const audio = document.getElementById('backgroundAudio');
+            audio.play().catch(error => {
+                console.log(".");
+            });
+        });
     </script>
 </body>
-</html> 
+</html>
 </body>
 </html>
 </video>
