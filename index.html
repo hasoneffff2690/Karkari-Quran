@@ -186,7 +186,7 @@
 <h4>الحقوق محفوظة لكل مسلم &copy;2024 -  موقع الكَركَري للقران الكريم</h4> <a href="https://www.facebook.com/Hassan.Qasrij" target="_blank">الفيسبوك</a> | by Hassan Al-Jarjari</p>
 </center>
 
-<!DOCTYPE html>
+
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
@@ -197,10 +197,23 @@
         audio {
             display: none;
         }
+
+        /* تصميم زر التشغيل (اختياري) */
+        #playButton {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <h1></h1>
+
+    <!-- زر لتشغيل الصوت (سيظهر فقط إذا فشل التشغيل التلقائي) -->
+    <button id="playButton" style="display: none;">اضغط هنا </button>
 
     <!-- عنصر الصوت -->
     <audio id="backgroundAudio">
@@ -210,13 +223,39 @@
     </audio>
 
     <script>
-        // دالة لتشغيل الصوت عند تحميل الصفحة
-        document.addEventListener('DOMContentLoaded', function () {
+        // متغير للتحقق من حالة التشغيل
+        let isAudioPlayed = false;
+
+        // دالة لتشغيل الصوت
+        function playAudio() {
             const audio = document.getElementById('backgroundAudio');
-            audio.play().catch(error => {
-                console.log(".");
-            });
+            if (!isAudioPlayed) {
+                audio.play().then(() => {
+                    console.log(".");
+                    isAudioPlayed = true;
+                }).catch(error => {
+                    console.log(".");
+                    // عرض الزر إذا فشل التشغيل التلقائي
+                    document.getElementById('playButton').style.display = 'block';
+                });
+            }
+        }
+
+        // محاولة تشغيل الصوت عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', () => {
+            playAudio();
         });
+
+        // تشغيل الصوت عند النقر على الزر
+        document.getElementById('playButton').addEventListener('click', () => {
+            playAudio();
+            document.getElementById('playButton').style.display = 'none'; // إخفاء الزر بعد التشغيل
+        });
+
+        // محاولة تشغيل الصوت عند تفاعل المستخدم مع الصفحة
+        window.addEventListener('click', playAudio);
+        window.addEventListener('scroll', playAudio);
+        window.addEventListener('keydown', playAudio);
     </script>
 </body>
 </html>
