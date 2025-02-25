@@ -187,6 +187,50 @@
 </center>
 </div>
 </div>
+
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تشغيل صوت تلقائي</title>
+    <style>
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>مرحبًا بك في موقعي</h1>
+
+    <!-- عنصر الصوت -->
+    <audio id="backgroundAudio">
+        <source src="audio-file.mp3" type="audio/mp3">
+        <source src="audio-file.ogg" type="audio/ogg">
+        متصفحك لا يدعم تشغيل ملفات الصوت.
+    </audio>
+
+    <script>
+        // التحقق مما إذا كان المستخدم قد تفاعل مع الصفحة
+        let hasInteracted = false;
+
+        // دالة لتشغيل الصوت
+        function playAudio() {
+            if (!hasInteracted) {
+                const audio = document.getElementById('backgroundAudio');
+                audio.play().catch(error => {
+                    console.log("لم يتم تشغيل الصوت بسبب قيود المتصفح.");
+                });
+                hasInteracted = true; // لضمان تشغيل الصوت مرة واحدة فقط
+            }
+        }
+
+        // تشغيل الصوت عند تفاعل المستخدم مع الصفحة
+        window.addEventListener('click', playAudio);
+        window.addEventListener('scroll', playAudio);
+        window.addEventListener('keydown', playAudio);
+    </script>
+</body>
+</html> 
 </body>
 </html>
 </video>
